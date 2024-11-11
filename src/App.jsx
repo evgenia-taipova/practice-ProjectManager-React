@@ -6,7 +6,7 @@ function App() {
   const [isAddingProject, setIsAddingProject] = useState(false);
   const [isViewingProject, setIsViewingProject] = useState(false);
   const [projects, setProjects] = useState([]);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(undefined);
 
   function handleAddProjectClick() {
     setIsAddingProject(true);

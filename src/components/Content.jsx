@@ -1,6 +1,7 @@
 import NewProjectForm from "./NewProjectForm";
-import imageNoProject from "../assets/no-projects.png";
+
 import ProjectDetail from "./ProjectDetail";
+import NoProjectSelected from "./NoProjectSelected";
 
 export default function Content({
   isAddingProject,
@@ -26,26 +27,7 @@ export default function Content({
       {isAddingProject && (
         <NewProjectForm onSaveProject={onSaveProject} onCancel={onCancel} />
       )}
-      {!isAddingProject && !isViewingProject && (
-        <>
-          <img
-            src={imageNoProject}
-            className="w-16 h-16 object-contain mx-auto"
-          ></img>
-          <h2 className="text-xl font-bold text-stone-500 my-4">
-            No Project Selected
-          </h2>
-          <p className="text-stone-600 mb-4">
-            Select a project or get started with a new one
-          </p>
-          <button
-            onClick={onAddProjectClick}
-            className="px-4 py-2 text-xs md:text-base rounded-md bg-stone-700 text-stone-400 hover:bg-stone-600 hover:text-stone-100"
-          >
-            Create new project
-          </button>
-        </>
-      )}
+      {!isAddingProject && !isViewingProject && <NoProjectSelected onAddProjectClick={onAddProjectClick}/>}
     </div>
   );
 }
